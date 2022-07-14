@@ -1,5 +1,6 @@
 package com.example
 
+import com.example.auth_area.authArea
 import io.ktor.server.application.*
 import com.example.plugins.*
 
@@ -8,6 +9,7 @@ fun main(args: Array<String>): Unit =
 
 @Suppress("unused") // application.conf references the main function. This annotation prevents the IDE from marking it as unused.
 fun Application.module() {
+    authArea()
     configureRouting()
     configureSerialization()
     configureMonitoring()
