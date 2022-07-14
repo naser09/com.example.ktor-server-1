@@ -1,0 +1,23 @@
+CREATE TABLE User(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    email TEXT NOT NULL,
+    username TEXT NOT NULL,
+    password TEXT NOT NULL
+);
+
+insert_user:
+INSERT OR FAIL INTO User(email,username,password)
+VALUES (?,?,?);
+
+get_user:
+SELECT * FROM User WHERE id=:id;
+
+get_all_user:
+SELECT * FROM User;
+
+update_user:
+INSERT OR REPLACE INTO User(id,email,username,password)
+                  VALUES (?,?,?,?);
+
+delete_user:
+DELETE FROM User WHERE id=:id;
